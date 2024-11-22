@@ -1,0 +1,17 @@
+{
+  "name": "acf-technik-hero",
+  "title": "Technik Hero",
+  "description": "a custom hero block on the technik page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "hero"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "technik-hero.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

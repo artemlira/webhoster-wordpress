@@ -1,0 +1,119 @@
+.post-270,
+.post-285,
+.post-64 {
+  .site-header {
+    background: linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #fafafa 100%);
+  }
+
+  .tariffs {
+    padding-top: clamp(108px, calc(4.56rem + 8.75vw), 178px);
+    padding-bottom: 0;
+    margin-top: clamp(-64px, calc(3.31rem + 2.75vw), -86px);
+    background:
+      linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #fafafa 100%),
+      url("../images/wordpress-page/hero-bg.png") 0 -251.719px / 100% 103.907% no-repeat;
+  }
+
+  .accordion {
+    ul {
+      padding-inline-start: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    li {
+      list-style: disc;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .second-section-tariffs {
+    padding-top: clamp(32px, calc(0.13rem + 7.5vw), 92px);
+    padding-bottom: clamp(76px, calc(4.25rem + 2vw), 92px);
+    margin-top: initial;
+  }
+
+  .wordpress-admin-walking {
+    color: var(--white-color);
+
+    @media screen and (width <= 768px) {
+      display: none;
+    }
+  }
+
+  .wordpress-admin-walking__container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .wordpress-admin-walking-content {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 50%;
+    padding: clamp(20px, calc(-4.42rem + 11.81vw), 71px)
+      clamp(10px, calc(-9.37rem + 20.83vw), 100px)
+      clamp(20px, calc(-1.97rem + 6.71vw), 49px) 16px;
+    background-color: var(--main-color);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .wordpress-admin-walking-title {
+    &:not(:last-child) {
+      margin-bottom: clamp(1rem, calc(-0.78rem + 3.7vw), 2rem);
+    }
+  }
+
+  .wordpress-admin-walking-text p {
+    &:not(:last-child) {
+      margin-bottom: clamp(1rem, calc(-0.78rem + 3.7vw), 2rem);
+    }
+  }
+
+  .wordpress-admin-walking-img-wrapper {
+    position: relative;
+    flex: 1 1 50%;
+    border-radius: 12px 0 0 12px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 40%;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(
+        90deg,
+        rgb(76 169 65 / 4%) 31.11%,
+        #4ca941eb 52.18%
+      );
+      border-radius: 12px;
+    }
+  }
+
+  .second-section-philosophy.philosophy {
+    background: #fafafa;
+
+    @media screen and (width <= 480px) {
+      display: none;
+    }
+
+    .philosophy-text {
+      width: 49%;
+      max-width: 590px;
+      margin-inline-start: auto;
+
+      @media screen and (width <= 768px) {
+        width: 100%;
+        margin-inline-start: initial;
+      }
+    }
+  }
+}

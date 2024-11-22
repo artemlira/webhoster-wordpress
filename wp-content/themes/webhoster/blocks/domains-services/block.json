@@ -1,0 +1,17 @@
+{
+  "name": "acf-domains-services",
+  "title": "Domains Services Block",
+  "description": "a custom domains services block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "services"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "domains-services.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

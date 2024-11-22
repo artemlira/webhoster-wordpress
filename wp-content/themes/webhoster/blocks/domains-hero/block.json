@@ -1,0 +1,17 @@
+{
+  "name": "acf-domains-hero",
+  "title": "Domains Hero Block",
+  "description": "a custom domains hero block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "hero"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "domains-hero.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

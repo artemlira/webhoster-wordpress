@@ -1,0 +1,17 @@
+{
+  "name": "acf-tabs",
+  "title": "Tabs Block",
+  "description": "a custom tabs block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "tabs"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tabs.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

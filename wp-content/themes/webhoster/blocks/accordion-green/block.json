@@ -1,0 +1,17 @@
+{
+  "name": "acf-accordion-green",
+  "title": "Accordion Green Block",
+  "description": "a custom accordions block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "accordion"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "accordion.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

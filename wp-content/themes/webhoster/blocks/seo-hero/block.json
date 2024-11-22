@@ -1,0 +1,15 @@
+{
+  "name": "acf-seo-hero",
+  "title": "Seo Hero",
+  "description": "a custom hero block with seo page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["hero"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "seo-hero.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

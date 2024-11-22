@@ -1,0 +1,17 @@
+{
+  "name": "acf-wordpress-admin-walking",
+  "title": "Wordpress Admin walking Block",
+  "description": "a custom admin walking block on the wordpress page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "admin"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "admin.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

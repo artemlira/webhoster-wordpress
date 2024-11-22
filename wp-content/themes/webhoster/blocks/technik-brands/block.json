@@ -1,0 +1,17 @@
+{
+  "name": "acf-technik-brands",
+  "title": "Technik Brands",
+  "description": "a custom brands block on the technik page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "brand"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "technik-brands.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

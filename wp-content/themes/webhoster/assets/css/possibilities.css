@@ -1,0 +1,28 @@
+.first-section-tariffs {
+  padding-bottom: initial;
+  background: linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #FAFAFA 100%), url('../images/possibilities-page/bg-hero.webp') 0 -251.719px / 100% 103.907% no-repeat;
+}
+
+.tariffs-subtitle {
+  &:not(:last-child) {
+    margin-bottom: clamp(32px, -21px + 13.25vw, 138px);
+  }
+}
+
+.wordpress-admin-walking {
+  padding-top: 92px;
+  background: #FAFAFA;
+}
+
+.philosophy {
+  background: #FAFAFA;
+}
+
+.possibilities__container {
+  padding-block: var(--padding-92-32);
+}
+
+.second-section-tariffs {
+  padding-bottom: var(--padding-92-32);
+  background-color: var(--white-color);
+}

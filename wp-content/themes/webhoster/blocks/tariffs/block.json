@@ -1,0 +1,17 @@
+{
+  "name": "acf-tariffs",
+  "title": "Tariffs Block",
+  "description": "a custom tariffs block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "tariffs"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tariffs.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

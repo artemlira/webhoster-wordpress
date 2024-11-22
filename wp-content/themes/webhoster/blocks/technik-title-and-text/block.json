@@ -1,0 +1,17 @@
+{
+  "name": "acf-technik-title-and-text",
+  "title": "Technik Title and Text",
+  "description": "a custom title and text block on the technik page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "title", "text"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "technik-title-and-text.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

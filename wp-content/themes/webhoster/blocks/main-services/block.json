@@ -1,0 +1,17 @@
+{
+  "name": "acf-main-services",
+  "title": "Main Services Block",
+  "description": "a custom services block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "services"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "services.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acf-domains-cards",
+  "title": "Domains Cards Block",
+  "description": "a custom domains cards block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "card"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "domains-cards.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acf-accordion-table",
+  "title": "Accordion with table Block",
+  "description": "a custom accordions-table block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "accordion"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "accordion-table.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

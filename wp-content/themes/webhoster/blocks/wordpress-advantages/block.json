@@ -1,0 +1,17 @@
+{
+  "name": "acf-wordpress-advantages",
+  "title": "Wordpress Advantages Block",
+  "description": "a custom advantages block on the wordpress page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "advantages"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "advantages.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acf-main-philosophy",
+  "title": "Main Philosophy Block",
+  "description": "a custom philosophy block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "philosophy"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "philosophy.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

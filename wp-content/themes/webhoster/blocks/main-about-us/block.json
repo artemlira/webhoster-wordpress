@@ -1,0 +1,17 @@
+{
+  "name": "acf-main-adout-us",
+  "title": "Main About Us Block",
+  "description": "a custom About us block on the main page that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "about-us"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "about-us.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "acf-subscription",
+  "title": "Subscription",
+  "description": "a custom subscription block that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "subscription"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "subscription.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

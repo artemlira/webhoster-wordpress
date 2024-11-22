@@ -1,0 +1,135 @@
+.first-section-philosophy {
+  background: #fafafa;
+
+  .philosophy-text {
+    width: 69%;
+    max-width: 827px;
+  }
+}
+
+.second-section-philosophy {
+  .philosophy-image {
+    bottom: -32%;
+    max-width: 323px;
+    aspect-ratio: 323 / 315;
+  }
+}
+
+.seo-hero {
+  padding-block: var(--fluid-64-92);
+  background:
+    linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #fafafa 100%),
+    url("../images/seo-page/bg-hero.jpg") top center / cover no-repeat;
+}
+
+.seo-hero__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  @media screen and (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.seo-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  @media screen and (width <= 768px) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.seo-hero-title {
+  font-size: var(--padding-64-32);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: var(--fluid-16-32);
+  }
+}
+
+.seo-hero-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(18px, 11px + 1.75vw, 32px);
+  background: #fff;
+  border: 1px solid var(--light-grey-color);
+  border-radius: 12px;
+}
+
+.seo-hero-card-title {
+  padding-bottom: 24px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--light-grey-color);
+  }
+}
+
+.seo-hero-card-price {
+  padding-bottom: 24px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+
+  span {
+    font-size: 48px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--light-grey-color);
+  }
+}
+
+.seo-hero-card-period {
+  color: var(--grey-color);
+}
+
+.seo-hero-card-text {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.seo-hero-card-text p {
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.seo-hero-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+  border-radius: 6px;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: var(--main-color-hover);
+  }
+
+  &:active {
+    background-color: var(--main-color-active);
+  }
+}
