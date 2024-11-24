@@ -40,8 +40,10 @@ get_header();
         wp_kses_post(get_the_title())
       )
     );
-    if (!dynamic_sidebar('single-post')) : dynamic_sidebar('single-post');
-    endif;
+    get_template_part('blocks/accordion-white/accordion', '', 'section');
+    get_template_part('blocks/philosophy/philosophy');
+    //    if (!dynamic_sidebar('single-post')) : dynamic_sidebar('single-post');
+    //    endif;
     wp_link_pages(
       array(
         'before' => '<div class="page-links">' . esc_html__('Pages:', 'webhoster'),

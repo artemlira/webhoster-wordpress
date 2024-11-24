@@ -1,3 +1,11 @@
+<?php
+/*
+Template Name: Form
+Template Post Type: post, page, product
+*/
+?>
+
+
 <?php get_header();
 
 //if (!dynamic_sidebar('sidebar-1')) : dynamic_sidebar('sidebar-1');endif;

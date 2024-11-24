@@ -208,17 +208,12 @@ function webhoster_scripts()
   if (is_page(52)) {
     wp_enqueue_style('cloudserver', get_template_directory_uri() . '/assets/css/cloudserver.css', array(), '1.0.0');
   }
+  if (is_single()) {
+    wp_enqueue_style('single-post', get_template_directory_uri() . '/assets/css/single-post.css', array(), '1.0.0');
+  }
   if (is_singular('possibilities')) {
     wp_enqueue_style('possibilities', get_template_directory_uri() . '/assets/css/possibilities.css', array(), '1.0.0');
   }
-  //  if (is_admin()) {
-  //    wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
-  //    wp_enqueue_style('domains', get_template_directory_uri() . '/assets/css/domains.css', array(), '1.0.0');
-  //    wp_enqueue_style('wordpress', get_template_directory_uri() . '/assets/css/wordpress.css', array(), '1.0.0');
-  //    wp_enqueue_style('v-server', get_template_directory_uri() . '/assets/css/v-server.css', array(), '1.0.0');
-  //    wp_enqueue_style('seo', get_template_directory_uri() . '/assets/css/seo.css', array(), '1.0.0');
-  //  }
-
   wp_enqueue_script('webhoster-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
   wp_enqueue_script('splide', get_template_directory_uri() . '/assets/js/splide.min.js', array(), '4.1.3', true);
   wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', array(), '3.12.5', true);
@@ -318,6 +313,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/blocks/technik-title-and-text');
   register_block_type(__DIR__ . '/blocks/technik-brands');
   register_block_type(__DIR__ . '/blocks/possibilities-wordpress');
+  register_block_type(__DIR__ . '/blocks/signature-privacy-policy');
+  register_block_type(__DIR__ . '/blocks/agb-button');
 }
 
 add_action('init', 'register_acf_blocks');

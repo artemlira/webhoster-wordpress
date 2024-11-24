@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Privacy Policy
+Template Post Type: post, page, product
+*/
+?>
 <?php get_header(); ?>
 <main class="privacy-policy">
   <header class="privacy-policy-header">
@@ -6,7 +12,7 @@
     <p class="privacy-policy-header-text">Perfektes Webhosting für Wordpress durch den Einsatz modernster Werkzeuge.</p>
   </header>
   <div class="entry-content">
-    <?php the_content() ?>
+    <div class="entry-content__container"> <?php the_content() ?></div>
   </div>
 </main>
 

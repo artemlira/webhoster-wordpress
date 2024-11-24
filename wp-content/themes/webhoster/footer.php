@@ -42,7 +42,9 @@ $footerLogo = get_field('logotype_footer', 'option');
             if ($rows) {
               $str = preg_replace("/[^0-9]/", '', $rows['telephone']);
               echo '
-              <li class="footer-support-item">' . $rows['title'] . '</li>
+              <li class="footer-support-item">
+               <a class="footer-support-link" href="' . $rows['link'] . '">' . $rows['title'] . '</a>
+              </li>
               <li class="footer-support-item">
                 <a class="footer-support-link" href="tel:' . $str . '">' . $rows['telephone'] . '</a>
               </li>

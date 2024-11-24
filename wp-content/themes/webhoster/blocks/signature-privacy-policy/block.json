@@ -1,0 +1,17 @@
+{
+  "name": "acf-signature-privacy-policy",
+  "title": "Signature in the privacy policy",
+  "description": "a custom Signature in the privacy policy block that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "signature"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "signature-privacy-policy.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

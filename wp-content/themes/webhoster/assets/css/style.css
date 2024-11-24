@@ -118,6 +118,51 @@ body.locked {
   margin-inline: auto;
 }
 
+h2.wp-block-heading {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 105%;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &:not(:first-child) {
+    margin-bottom: 32px;
+  }
+}
+
+h3.wp-block-heading {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &:not(:first-child) {
+    margin-bottom: 32px;
+  }
+}
+
+h4.wp-block-heading {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &:not(:first-child) {
+    margin-bottom: 32px;
+  }
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -126,6 +171,17 @@ body.locked {
 
 .site-main {
   flex: 1 1 auto;
+}
+
+.signature-privacy-policy {
+  margin-top: 32px;
+  color: #898989;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
 }
 
 .visually-hidden {
@@ -2508,6 +2564,27 @@ div.searchwp-live-search-no-results em {
   }
 }
 
+.privacy-policy-button {
+  padding-top: var(--padding-92-32);
+}
+
+.privacy-policy-button__container {
+  a {
+    display: inline-flex;
+    column-gap: 10px;
+    align-items: center;
+    padding: 10px 16px;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    border-radius: 6px;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: var(--main-color-hover);
+    }
+  }
+}
+
 /* privacy policy end */
 
 /* media queries */
@@ -2707,3 +2784,4 @@ div.searchwp-live-search-no-results em {
     padding-inline: 18px;
   }
 }
+

@@ -1,0 +1,17 @@
+{
+  "name": "acf-afb-button",
+  "title": "Button in the privacy policy",
+  "description": "a custom Button in the privacy policy block that uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "button"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "agb-button.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
