@@ -423,6 +423,10 @@ div.searchwp-live-search-no-results em {
   margin-right: auto;
 }
 
+.site-header.isActive .logo-black-text {
+  fill: var(--white-color);
+}
+
 .header-navigation .menu {
   display: flex;
   flex-wrap: wrap;
