@@ -7,8 +7,9 @@
   <header class="section-blog-header">
     <div class="section-blog-header__container">
       <h1 class="section-blog-title">Blog</h1>
-      <?php if (!dynamic_sidebar('sidebar-1')) : dynamic_sidebar('sidebar-1');endif; ?>
-      
+      <ul>
+        <?php wp_list_categories(); ?>
+      </ul>
     </div>
   </header>
   <div class="section-blog__container">

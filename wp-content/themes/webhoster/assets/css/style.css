@@ -1152,16 +1152,6 @@ div.searchwp-live-search-no-results em {
   }
 }
 
-.cloudserver.philosophy {
-  background: #FAFAFA;
-
-  .philosophy-image {
-    bottom: -33%;
-    max-width: 323px;
-    aspect-ratio: 323 / 303;
-  }
-}
-
 /* main philosophy end */
 
 /* tariffs start */
@@ -1981,6 +1971,16 @@ div.searchwp-live-search-no-results em {
 
   .philosophy-image {
     bottom: 64px;
+  }
+}
+
+.cloudserver.philosophy {
+  background: #FAFAFA;
+
+  .philosophy-image {
+    bottom: -33%;
+    max-width: 323px;
+    aspect-ratio: 323 / 303;
   }
 }
 
@@ -2893,6 +2893,62 @@ div.searchwp-live-search-no-results em {
   }
 }
 
+/* custom select start */
+.categories {
+  position: relative;
+  max-width: 420px;
+  padding: 9px 9px 9px 24px;
+  margin-inline: auto;
+  cursor: pointer;
+  user-select: none;
+  background: url("../images/arrow-down.svg") 98% center / 24px 24px no-repeat, var(--white-color);
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+}
+
+.cat-item {
+  padding: 9px 9px 9px 24px;
+  background-color: var(--white-color);
+}
+
+.categories > ul {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 100%;
+  max-height: 252px;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  list-style-type: none;
+  scrollbar-color: var(--main-color) var(--white-color);
+  scrollbar-width: thin;
+  background-color: white;
+  border: 1px solid #E6E6E6;
+  border-radius: 6px;
+  transition-duration: 0.3s;
+}
+
+.categories ul li {
+  padding: 9px 9px 9px 24px;
+}
+
+.categories ul li:hover {
+  background-color: #F3F3F3;
+  border-right: 1px solid var(--light-grey-color);
+  border-left: 1px solid var(--light-grey-color);
+}
+
+.categories ul li:active {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+/* custom select end */
+
 /*  blog end */
 
 /*  admin walking start */
@@ -3087,6 +3143,70 @@ div.searchwp-live-search-no-results em {
 
   &:active {
     background-color: var(--main-color-active);
+  }
+}
+
+/* form Soforthilfe */
+#wpcf7-f3395-o1, .form-bestellung__container, .form-bestellungpro__container, .form-bestellungbusiness__container {
+  .wpcf7-form div:nth-child(4) {
+    display: block;
+  }
+
+  span[data-name="your-accountname"],
+  span[data-name="your-domain"] {
+    max-width: 668px;
+  }
+
+  .wpcf7-acceptance label {
+    display: flex;
+    column-gap: 16px;
+    align-items: start;
+
+    input {
+      flex: 0 0 16px;
+      margin-top: 6px;
+    }
+
+    span {
+      display: block;
+      flex: 1 1 auto;
+    }
+
+    span a {
+      color: var(--main-color);
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: var(--main-color-hover);
+      }
+    }
+  }
+
+  .form-text-dark {
+    color: var(--black-color);
+  }
+
+  .wpcf7-form div:nth-child(5) {
+    display: flex;
+    column-gap: 16px;
+
+    @media screen and (width <= 600px) {
+      flex-direction: column;
+      row-gap: 32px;
+    }
+
+    label:has(span[data-name="your-plz"]) {
+      flex: 0 0 192px;
+
+      @media screen and (width <= 600px) {
+        flex: 1 1 auto;
+      }
+    }
+
+    label:has(span[data-name="your-otr"]) {
+      flex: 1 1 auto;
+    }
   }
 }
 

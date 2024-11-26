@@ -184,41 +184,13 @@ function webhoster_scripts()
   wp_enqueue_style('splide', get_template_directory_uri() . '/assets/css/splide.min.css', array(), '4.1.3');
   wp_enqueue_style('stylesheet', get_template_directory_uri() . '/assets/fonts/stylesheet.css', array(), '1.0.0');
   wp_enqueue_style('styles', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
-  
+
   wp_enqueue_script('webhoster-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
   wp_enqueue_script('splide', get_template_directory_uri() . '/assets/js/splide.min.js', array(), '4.1.3', true);
   wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', array(), '3.12.5', true);
   wp_enqueue_script('scrollTrigger', get_template_directory_uri() . '/assets/js/ScrollTrigger.min.js', array(), '3.12.5', true);
   wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true);
-  if (is_page(2)) {
-//    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), _S_VERSION, true);
-  }
-  if (is_page([40, 54])) { /* 54 */
-//    wp_enqueue_script('domains', get_template_directory_uri() . '/assets/js/domains.js', array(), _S_VERSION, true);
-  }
-  if (is_page([270, 285, 64])) { /* 285 */
-//    wp_enqueue_script('wordpress', get_template_directory_uri() . '/assets/js/wordpress.js', array(), _S_VERSION, true);
-  }
-  if (is_page([60, 42])) {
-//    wp_enqueue_script('v-server', get_template_directory_uri() . '/assets/js/v-server.js', array(), _S_VERSION, true);
-  }
-  if (is_page([44, 56])) {
-//    wp_enqueue_script('seo', get_template_directory_uri() . '/assets/js/seo.js', array(), _S_VERSION, true);
-  }
-  if (is_page(62)) {
-//    wp_enqueue_script('vmware', get_template_directory_uri() . '/assets/js/vmware.js', array(), _S_VERSION, true);
-  }
-  if (is_page(52)) {
-//    wp_enqueue_script('cloudserver', get_template_directory_uri() . '/assets/js/cloudserver.js', array(), _S_VERSION, true);
-  }
-  if (is_single()) {
-//    wp_enqueue_script('single-post', get_template_directory_uri() . '/assets/js/single-post.js', array(), _S_VERSION, true);
-  }
-  if (is_singular('possibilities')) {
-//    wp_enqueue_script('possibilities', get_template_directory_uri() . '/assets/js/possibilities.js', array(), _S_VERSION, true);
-  }
-
-
+  
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }

@@ -14,12 +14,13 @@ Template Post Type: post, page, product
 <section class="section-form">
   <header class="section-form-header">
     <div class="section-form-header__container">
-      <h1 class="section-form-title">Kündigung</h1>
+      <h1 class="section-form-title"><?php the_title(); ?></h1>
     </div>
   </header>
-  <div class="section-form__container">
-    <?php echo apply_shortcodes('[contact-form-7 id="7b71f36" title="form"]'); ?>
-  </div>
+
+  <?php the_content(); ?>
+  <!--    --><?php //echo apply_shortcodes('[contact-form-7 id="7b71f36" title="form"]'); ?>
+
 </section>
 
 <?php get_footer(); ?>

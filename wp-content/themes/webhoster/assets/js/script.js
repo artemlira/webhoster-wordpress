@@ -156,7 +156,7 @@ gsap?.to(".main-philosophy-image", {
 
 gsap?.registerPlugin(ScrollTrigger);
 gsap?.fromTo(
-  ".domains-hero-title",
+  ".domains .domains-hero-title",
   {
     x: -150,
     opacity: 0,
@@ -168,7 +168,7 @@ gsap?.fromTo(
   },
 );
 gsap?.fromTo(
-  ".domains-hero-title span",
+  ".domains .domains-hero-title span",
   {
     x: -150,
     opacity: 0,
@@ -181,7 +181,7 @@ gsap?.fromTo(
   },
 );
 gsap?.fromTo(
-  ".domains-hero-text",
+  ".domains .domains-hero-text",
   {
     x: 150,
     opacity: 0,
@@ -191,6 +191,18 @@ gsap?.fromTo(
     opacity: 1,
     duration: 1,
     delay: 1,
+  },
+);
+gsap?.fromTo(
+  ".bestellung .domains-hero-title",
+  {
+    scale: 0,
+    opacity: 0,
+  },
+  {
+    scale: 1,
+    opacity: 1,
+    duration: 1,
   },
 );
 
@@ -477,37 +489,43 @@ document.addEventListener("DOMContentLoaded", colorLastRowYellow);
 window.addEventListener("resize", colorLastRowYellow);
 
 // ============================================= splide slider =============================================
-new Splide(".splide", {
-  type: "loop",
-  perPage: 1,
-  autoplay: true,
-  gap: 20,
-  mediaQuery: "min",
-  pagination: true,
-  arrows: false,
-  padding: 10,
-  breakpoints: {
-    768: {
-      destroy: true,
+const splideFirst = document.querySelector(".splide");
+const splideSecond = document.querySelector(".second-section-tariffs .splide");
+if (splideFirst) {
+  new Splide(".splide", {
+    type: "loop",
+    perPage: 1,
+    autoplay: true,
+    gap: 20,
+    mediaQuery: "min",
+    pagination: true,
+    arrows: false,
+    padding: 10,
+    breakpoints: {
+      768: {
+        destroy: true,
+      },
     },
-  },
-})?.mount();
+  })?.mount();
+}
 
-new Splide(".second-section-tariffs .splide", {
-  type: "loop",
-  perPage: 1,
-  autoplay: true,
-  gap: 20,
-  mediaQuery: "min",
-  pagination: true,
-  arrows: false,
-  padding: 10,
-  breakpoints: {
-    768: {
-      destroy: true,
+if (splideSecond) {
+  new Splide(".second-section-tariffs .splide", {
+    type: "loop",
+    perPage: 1,
+    autoplay: true,
+    gap: 20,
+    mediaQuery: "min",
+    pagination: true,
+    arrows: false,
+    padding: 10,
+    breakpoints: {
+      768: {
+        destroy: true,
+      },
     },
-  },
-})?.mount();
+  })?.mount();
+}
 
 // ============================================= play video =============================================
 
@@ -544,53 +562,68 @@ playVideo(
 );
 
 // ================================== custom select =====================================
-// document.querySelectorAll(".postform-1").forEach(function (element) {
-//   element.style.display = "none";
-//
-//   let selectWrapper = document.createElement("div");
-//   selectWrapper.classList.add("select");
-//   element.parentNode.insertBefore(selectWrapper, element);
-//   selectWrapper.appendChild(element);
-//
-//   let select = document.createElement("div");
-//   select.classList.add("copy_select");
-//   select.textContent = element.querySelector("option[value='-1']").textContent;
-//   selectWrapper.appendChild(select);
-//
-//   let optionList = document.createElement("div");
-//   optionList.classList.add("option_list");
-//   selectWrapper.appendChild(optionList);
-//
-//   element.querySelectorAll("option").forEach(function (option, index) {
-//     if (index !== 0) {
-//       let optionItem = document.createElement("div");
-//       optionItem.classList.add("option_item");
-//       optionItem.innerHTML = "<span>" + option.textContent + "</span>";
-//       optionItem.setAttribute("data-value", option.value);
-//       optionList.appendChild(optionItem);
-//     }
-//   });
-//
-//   optionList.style.display = "none";
-//
-//   select.addEventListener("click", function () {
-//     let isOpen = select.classList.contains("on");
-//     if (!isOpen) {
-//       select.classList.add("on");
-//       optionList.style.display = "block";
-//
-//       optionList.querySelectorAll(".option_item").forEach(function (item) {
-//         item.addEventListener("click", function () {
-//           let chooseItem = this.getAttribute("data-value");
-//           element.value = chooseItem;
-//           select.textContent = this.querySelector("span").textContent;
-//           optionList.style.display = "none";
-//           select.classList.remove("on");
-//         });
-//       });
-//     } else {
-//       select.classList.remove("on");
-//       optionList.style.display = "none";
-//     }
-//   });
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  const categories = document.querySelector(".categories");
+  const categoriesList = categories?.querySelector(".section-blog-header ul");
+
+  // Проверяем, что элементы существуют
+  if (!categories || !categoriesList) return;
+
+  // Текст заголовка (первый дочерний текстовый узел)
+  const categoriesText = Array.from(categories.childNodes).find(
+    (node) => node.nodeType === Node.TEXT_NODE,
+  );
+
+  // Создаем кнопку-триггер
+  const toggleButton = document.createElement("div");
+  toggleButton.textContent = categoriesText
+    ? categoriesText.textContent
+    : "Kategorien";
+
+  // Заменяем текстовый узел на кнопку
+  if (categoriesText) {
+    categories.replaceChild(toggleButton, categoriesText);
+  } else {
+    categories.insertBefore(toggleButton, categoriesList);
+  }
+
+  // Обработчик клика для открытия/закрытия списка
+  toggleButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    categoriesList.style.display =
+      categoriesList.style.display === "block" ? "none" : "block";
+  });
+
+  // Обработка кликов по элементам списка
+  const listItems = categoriesList.querySelectorAll("li");
+  listItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      // Находим ссылку внутри элемента
+      const link = item.querySelector("a");
+      if (link) {
+        // Обновляем текст кнопки текстом ссылки
+        toggleButton.textContent = link.textContent;
+
+        // Опционально: можно добавить переход по ссылке
+        window.location.href = link.href;
+      }
+
+      // Закрываем список
+      categoriesList.style.display = "none";
+    });
+  });
+
+  // Закрытие списка при клике вне его
+  document.addEventListener("click", (event) => {
+    if (!categories.contains(event.target)) {
+      categoriesList.style.display = "none";
+    }
+  });
+
+  // Предотвращение закрытия при клике внутри списка
+  categoriesList.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+});
