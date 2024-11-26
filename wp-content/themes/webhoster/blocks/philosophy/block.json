@@ -1,11 +1,12 @@
 {
   "name": "acf-philosophy",
-  "title": "Philosophy Block",
+  "title": "Philosophy Block (Fazit)",
   "description": "a custom philosophy blocks that uses ACF fields",
   "category": "formatting",
   "icon": "admin-comments",
   "keywords": [
-    "philosophy"
+    "philosophy",
+    "fazit"
   ],
   "acf": {
     "mode": "preview",

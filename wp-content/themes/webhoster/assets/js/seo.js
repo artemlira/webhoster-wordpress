@@ -1,6 +1,6 @@
 // ============================================= animation =============================================
 gsap?.registerPlugin(ScrollTrigger);
-gsap?.to(".first-section-philosophy .philosophy-image", {
+gsap?.to(".seo.first-section-philosophy .philosophy-image", {
   scrollTrigger: {
     trigger: ".wordpress-advantages",
     start: "top top",
@@ -9,7 +9,7 @@ gsap?.to(".first-section-philosophy .philosophy-image", {
   scale: 1,
   duration: 3,
 });
-gsap?.to(".second-section-philosophy .philosophy-image", {
+gsap?.to(".seo.second-section-philosophy .philosophy-image", {
   scrollTrigger: {
     trigger: ".first-section-philosophy",
     start: "top top",

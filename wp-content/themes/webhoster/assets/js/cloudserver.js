@@ -1,14 +1,4 @@
 // ============================================= animation =============================================
-gsap?.registerPlugin(ScrollTrigger);
-gsap?.to(".philosophy-image", {
-  scrollTrigger: {
-    trigger: ".subscription",
-    start: "top top",
-    scrub: true,
-  },
-  scale: 1,
-  duration: 3,
-});
 
 // ============================================= Accordion =============================================
 function toggleAccordion(

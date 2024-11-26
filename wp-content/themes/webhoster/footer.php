@@ -139,9 +139,9 @@ $footerLogo = get_field('logotype_footer', 'option');
     <div class="copyright-wrapper">
       <p class="copyright-text">© <?php echo current_time('Y'); ?> webhoster.de</p>
       <ul class="copyright-list">
-        <li class="copyright-item"><a href="#" class="copyright-link">Impressum</a></li>
-        <li class="copyright-item"><a href="#" class="copyright-link">Datenschutz</a></li>
-        <li class="copyright-item"><a href="/privacy-policy/" class="copyright-link">AGB</a></li>
+        <li class="copyright-item"><a href="/impressum/" class="copyright-link">Impressum</a></li>
+        <li class="copyright-item"><a href="/datenschutz/" class="copyright-link">Datenschutz</a></li>
+        <li class="copyright-item"><a href="/agb-2/" class="copyright-link">AGB</a></li>
       </ul>
     </div>
   </div><!-- .site-info -->

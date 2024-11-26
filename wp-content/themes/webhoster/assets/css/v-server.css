@@ -1,24 +1,7 @@
 .first-section-tariffs {
-  background: url("../images/bg tariffs-v-server.png") top center / cover
-    no-repeat;
+  background: url("../images/bg tariffs-v-server.png") top center / cover no-repeat;
 }
 
-.philosophy {
-  background-color: #fafafa;
-}
 
-.philosophy-image {
-  position: absolute;
-  bottom: -35%;
-  left: 0;
-  width: 27%;
-  max-width: 323px;
-  aspect-ratio: 323 / 311;
-  object-fit: cover;
 
-  /* scale: 0; */
 
-  @media screen and (width <= 768px) {
-    display: none;
-  }
-}

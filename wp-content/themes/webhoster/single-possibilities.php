@@ -3,7 +3,7 @@
 <?= get_template_part('blocks/tariffs/tariffs', '', 'first-section-tariffs'); ?>
 <?= get_template_part('blocks/wordpress-advantages/advantages'); ?>
 <?= get_template_part('blocks/wordpress-admin-walking/admin'); ?>
-<?= get_template_part('blocks/philosophy/philosophy'); ?>
+<?= get_template_part('blocks/philosophy/philosophy', '', 'section'); ?>
 <div class="possibilities__container">
   <h2 class="accordion-table-section-title section-title">Unsere Webhosting <br>Angebote im Vergleich</h2>
   <?php the_content(); ?>

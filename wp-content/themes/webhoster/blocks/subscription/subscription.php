@@ -36,11 +36,11 @@ if (!empty($block['className'])) {
         <?php if (!empty($text)): ?>
           <div class="subscription-text"><?= $text ?></div>
         <?php endif; ?>
-        <form class="subscription-form" method="get" role="search">
-          <input class="subscription-input" id="subscription-input" type="search" value=""
+        <form class="subscription-form" role="search" method="get" id="searchform" action="<?php echo home_url('/') ?>">
+          <input class="subscription-input" type="search"
+                 value="<?php echo get_search_query() ?>" name="s" id="s"
                  placeholder="<?= $placeholder ?>">
-          <button class="subscription-button" type="submit"
-          "><?= $textButton; ?></button>
+          <button class="subscription-button" type="submit" id="searchsubmit"><?= $textButton; ?></button>
         </form>
       </div>
     </section>

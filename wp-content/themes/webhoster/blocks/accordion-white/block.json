@@ -1,11 +1,12 @@
 {
   "name": "acf-accordion-white",
-  "title": "Accordion White Block",
+  "title": "Accordion White Block (FAQ)",
   "description": "a custom accordions-white block on the main page that uses ACF fields",
   "category": "formatting",
   "icon": "admin-comments",
   "keywords": [
-    "accordion"
+    "accordion",
+    "faq"
   ],
   "acf": {
     "mode": "preview",

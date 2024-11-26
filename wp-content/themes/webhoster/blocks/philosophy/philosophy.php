@@ -19,7 +19,7 @@ if (!empty($block['anchor'])) {
   $anchor = 'id="' . esc_attr($block['anchor']) . '" ';
 }
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'philosophy';
+$class_name = 'philosophy' . ' ' . $args;
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }

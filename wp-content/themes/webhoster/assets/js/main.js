@@ -1,110 +1,110 @@
 // ============================================= animations gsap =============================================
-gsap?.registerPlugin(ScrollTrigger);
-const tl = gsap?.timeline();
-gsap?.fromTo(
-  ".main-hero-title",
-  {
-    y: 120,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  },
-);
-gsap?.fromTo(
-  ".main-hero-text",
-  {
-    y: 120,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  },
-);
-gsap?.fromTo(
-  ".main-hero-form",
-  {
-    y: 120,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 1,
-  },
-);
-gsap?.fromTo(
-  ".main-hero-img-decor",
-  {
-    x: -120,
-    opacity: 0,
-  },
-  {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    delay: 0.6,
-  },
-);
-gsap?.fromTo(
-  ".main-hero-img-man",
-  {
-    x: 120,
-    opacity: 0,
-  },
-  {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    delay: 0.6,
-  },
-);
-gsap?.fromTo(
-  ".main-hero-img-decor-red",
-  {
-    x: 120,
-    opacity: 0,
-  },
-  {
-    x: 0,
-    opacity: 1,
-    duration: 1,
-    delay: 0.6,
-  },
-);
-
-gsap?.to(".main-hero-img-decor", {
-  scrollTrigger: {
-    trigger: ".site-header",
-    start: "top top",
-    scrub: true,
-  },
-  filter: "blur(0px)",
-  duration: 1,
-});
-gsap?.to(".main-hero-img-decor-red", {
-  scrollTrigger: {
-    trigger: ".main-hero",
-    start: "top top",
-    scrub: true,
-  },
-  filter: "blur(0px)",
-  duration: 1,
-});
-gsap?.to(".main-philosophy-image", {
-  scrollTrigger: {
-    trigger: ".main-about-us__container",
-    start: "center top",
-    scrub: true,
-  },
-  rotate: "360deg",
-  scale: 1,
-  duration: 3,
-});
+// gsap?.registerPlugin(ScrollTrigger);
+// const tl = gsap?.timeline();
+// gsap?.fromTo(
+//   ".main-hero-title",
+//   {
+//     y: 120,
+//     opacity: 0,
+//   },
+//   {
+//     y: 0,
+//     opacity: 1,
+//     duration: 1,
+//   },
+// );
+// gsap?.fromTo(
+//   ".main-hero-text",
+//   {
+//     y: 120,
+//     opacity: 0,
+//   },
+//   {
+//     y: 0,
+//     opacity: 1,
+//     duration: 1,
+//   },
+// );
+// gsap?.fromTo(
+//   ".main-hero-form",
+//   {
+//     y: 120,
+//     opacity: 0,
+//   },
+//   {
+//     y: 0,
+//     opacity: 1,
+//     duration: 1,
+//   },
+// );
+// gsap?.fromTo(
+//   ".main-hero-img-decor",
+//   {
+//     x: -120,
+//     opacity: 0,
+//   },
+//   {
+//     x: 0,
+//     opacity: 1,
+//     duration: 1,
+//     delay: 0.6,
+//   },
+// );
+// gsap?.fromTo(
+//   ".main-hero-img-man",
+//   {
+//     x: 120,
+//     opacity: 0,
+//   },
+//   {
+//     x: 0,
+//     opacity: 1,
+//     duration: 1,
+//     delay: 0.6,
+//   },
+// );
+// gsap?.fromTo(
+//   ".main-hero-img-decor-red",
+//   {
+//     x: 120,
+//     opacity: 0,
+//   },
+//   {
+//     x: 0,
+//     opacity: 1,
+//     duration: 1,
+//     delay: 0.6,
+//   },
+// );
+//
+// gsap?.to(".main-hero-img-decor", {
+//   scrollTrigger: {
+//     trigger: ".site-header",
+//     start: "top top",
+//     scrub: true,
+//   },
+//   filter: "blur(0px)",
+//   duration: 1,
+// });
+// gsap?.to(".main-hero-img-decor-red", {
+//   scrollTrigger: {
+//     trigger: ".main-hero",
+//     start: "top top",
+//     scrub: true,
+//   },
+//   filter: "blur(0px)",
+//   duration: 1,
+// });
+// gsap?.to(".main-philosophy-image", {
+//   scrollTrigger: {
+//     trigger: ".main-about-us__container",
+//     start: "center top",
+//     scrub: true,
+//   },
+//   rotate: "360deg",
+//   scale: 1,
+//   duration: 3,
+// });
 
 // ============================================= splide slider =============================================
 new Splide(".splide", {

@@ -8,6 +8,7 @@
     <div class="section-blog-header__container">
       <h1 class="section-blog-title">Blog</h1>
       <?php if (!dynamic_sidebar('sidebar-1')) : dynamic_sidebar('sidebar-1');endif; ?>
+      
     </div>
   </header>
   <div class="section-blog__container">
@@ -25,7 +26,7 @@
           <?php else: ?>
             <img
                 class="section-blog-item-image"
-                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/No-image-available-2.webp"
+                src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/No_image_available-de.svg.webp"
                 alt="No image available"
                 loading="lazy"
             >
