@@ -27,19 +27,19 @@ if (!empty($block['className'])) {
   <div class="main-hero__container">
     <img
         class="main-hero-img-man"
-        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-man.png"
+        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-man.webp"
         alt="astronaut with laptop"
         loading="lazy"
     >
     <img
         class="main-hero-img-decor"
-        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-decor.png"
+        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-decor.webp"
         alt="decor"
         loading="lazy"
     >
     <img
         class="main-hero-img-decor-red"
-        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-decor2.png"
+        src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/main-page/hero/hero-decor2.webp"
         alt="decor"
         loading="lazy"
     >

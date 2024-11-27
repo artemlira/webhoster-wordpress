@@ -13,9 +13,11 @@
 
         ?>
       </h1>
+      <ul>
+        <?php wp_list_categories(); ?>
+      </ul>
     </div>
   </header>
-  <?php if (!dynamic_sidebar('error-404')) : dynamic_sidebar('error-404');endif; ?>
   <div class="section-blog__container">
     <ul class="section-blog-list">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -47,6 +49,7 @@
       <?php endif; ?>
     </ul>
   </div>
+  <?php if (!dynamic_sidebar('error-404')) : dynamic_sidebar('error-404');endif; ?>
 </section>
 
 <?php get_footer(); ?>

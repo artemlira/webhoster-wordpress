@@ -17,10 +17,7 @@ Template Post Type: post, page, product
       <h1 class="section-form-title"><?php the_title(); ?></h1>
     </div>
   </header>
-
   <?php the_content(); ?>
-  <!--    --><?php //echo apply_shortcodes('[contact-form-7 id="7b71f36" title="form"]'); ?>
-
 </section>
 
 <?php get_footer(); ?>

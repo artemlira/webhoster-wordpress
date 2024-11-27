@@ -29,7 +29,7 @@ items?.forEach((item) => {
   });
 });
 
-headerSearch.addEventListener("focus", () => {
+headerSearch?.addEventListener("focus", () => {
   menu?.classList.remove("isActive");
   burger?.classList.remove("isActive");
   body?.classList.remove("locked");
@@ -134,15 +134,15 @@ gsap?.to(".main-hero-img-decor", {
   filter: "blur(0px)",
   duration: 1,
 });
-gsap?.to(".main-hero-img-decor-red", {
-  scrollTrigger: {
-    trigger: ".main-hero",
-    start: "top top",
-    scrub: true,
-  },
-  filter: "blur(0px)",
-  duration: 1,
-});
+// gsap?.to(".main-hero-img-decor-red", {
+//   scrollTrigger: {
+//     trigger: ".main-hero",
+//     start: "top top",
+//     scrub: true,
+//   },
+//   filter: "blur(0px)",
+//   duration: 1,
+// });
 gsap?.to(".main-philosophy-image", {
   scrollTrigger: {
     trigger: ".main-about-us__container",
@@ -566,63 +566,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const categories = document.querySelector(".categories");
   const categoriesList = categories?.querySelector(".section-blog-header ul");
 
-  // Проверяем, что элементы существуют
   if (!categories || !categoriesList) return;
 
-  // Текст заголовка (первый дочерний текстовый узел)
   const categoriesText = Array.from(categories.childNodes).find(
     (node) => node.nodeType === Node.TEXT_NODE,
   );
 
-  // Создаем кнопку-триггер
   const toggleButton = document.createElement("div");
   toggleButton.textContent = categoriesText
     ? categoriesText.textContent
     : "Kategorien";
 
-  // Заменяем текстовый узел на кнопку
   if (categoriesText) {
     categories.replaceChild(toggleButton, categoriesText);
   } else {
     categories.insertBefore(toggleButton, categoriesList);
   }
 
-  // Обработчик клика для открытия/закрытия списка
   toggleButton.addEventListener("click", (event) => {
     event.stopPropagation();
     categoriesList.style.display =
       categoriesList.style.display === "block" ? "none" : "block";
   });
 
-  // Обработка кликов по элементам списка
   const listItems = categoriesList.querySelectorAll("li");
   listItems.forEach((item) => {
     item.addEventListener("click", (event) => {
       event.stopPropagation();
 
-      // Находим ссылку внутри элемента
       const link = item.querySelector("a");
       if (link) {
-        // Обновляем текст кнопки текстом ссылки
         toggleButton.textContent = link.textContent;
-
-        // Опционально: можно добавить переход по ссылке
         window.location.href = link.href;
       }
 
-      // Закрываем список
       categoriesList.style.display = "none";
     });
   });
 
-  // Закрытие списка при клике вне его
   document.addEventListener("click", (event) => {
     if (!categories.contains(event.target)) {
       categoriesList.style.display = "none";
     }
   });
 
-  // Предотвращение закрытия при клике внутри списка
   categoriesList.addEventListener("click", (event) => {
     event.stopPropagation();
   });

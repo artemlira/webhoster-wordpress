@@ -41,7 +41,7 @@ if (!empty($block['className'])) {
     $args = array(
       'tax_query' => array(
         array(
-          'taxonomy' => 'possibilities',
+          'taxonomy' => 'possibilities_type',
           'field' => 'slug',
           'terms' => $service,
 

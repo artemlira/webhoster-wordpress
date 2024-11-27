@@ -190,7 +190,7 @@ function webhoster_scripts()
   wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/js/gsap.min.js', array(), '3.12.5', true);
   wp_enqueue_script('scrollTrigger', get_template_directory_uri() . '/assets/js/ScrollTrigger.min.js', array(), '3.12.5', true);
   wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true);
-  
+
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
@@ -258,6 +258,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/blocks/possibilities-wordpress');
   register_block_type(__DIR__ . '/blocks/signature-privacy-policy');
   register_block_type(__DIR__ . '/blocks/agb-button');
+  register_block_type(__DIR__ . '/blocks/products');
 }
 
 add_action('init', 'register_acf_blocks');
@@ -267,6 +268,29 @@ add_action('init', 'register_acf_blocks');
 add_action('init', 'my_custom_init_possibilities');
 function my_custom_init_possibilities()
 {
+  register_taxonomy('possibilities_type', 'possibilities', array(
+    'labels' => array(
+      'name' => 'Possibilities', // основное название во множественном числе
+      'singular_name' => 'Possibility', // название единичного элемента таксономии
+      'menu_name' => 'Possibilities', // Название в меню. По умолчанию: name.
+      'all_items' => 'Possibilities',
+      'edit_item' => 'Edit Possibility',
+      'view_item' => 'View Possibility', // текст кнопки просмотра записи на сайте (если поддерживается типом)
+      'update_item' => 'Update Possibility',
+      'add_new_item' => 'Add New Possibility',
+      'new_item_name' => 'New Name Possibility',
+      'search_items' => 'Search Possibilities',
+      'popular_items' => 'Popular Possibilities', // для таксономий без иерархий
+      'not_found' => 'Not found Possibilities',
+      'back_to_items' => '← Back to Possibilities',
+    ),
+    'show_in_quick_edit' => true,
+    'show_admin_column' => true,
+    'has_archive' => false,
+
+//    'rewrite' => ['slug' => '%post_tag%', 'with_front' => false],
+  ));
+
   register_post_type('possibilities', array(
     'labels' => array(
       'name' => 'Possibilities', // Основное название типа записи
@@ -289,38 +313,35 @@ function my_custom_init_possibilities()
     'show_in_menu' => true,
     'show_in_rest' => true,
     'query_var' => true,
-    'rewrite' => true,
     'capability_type' => 'post',
-    'has_archive' => true,
+    'has_archive' => false,
     'hierarchical' => false,
     'menu_position' => 4,
     'menu_icon' => 'dashicons-list-view',
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
-    'taxonomies' => array('category'),
+    'rewrite' => array('slug' => 'produkt', 'with_front' => false),
+//    'taxonomies' => array('category'),
   ));
-
-  $args = array(
-    'labels' => array(
-      'name' => 'Possibilities', // основное название во множественном числе
-      'singular_name' => 'Possibility', // название единичного элемента таксономии
-      'menu_name' => 'Possibilities', // Название в меню. По умолчанию: name.
-      'all_items' => 'Possibilities',
-      'edit_item' => 'Edit Possibility',
-      'view_item' => 'View Possibility', // текст кнопки просмотра записи на сайте (если поддерживается типом)
-      'update_item' => 'Update Possibility',
-      'add_new_item' => 'Add New Possibility',
-      'new_item_name' => 'New Name Possibility',
-      'search_items' => 'Search Possibilities',
-      'popular_items' => 'Popular Possibilities', // для таксономий без иерархий
-      'not_found' => 'Not found Possibilities',
-      'back_to_items' => '← Back to Possibilities',
-    ),
-    'show_in_quick_edit' => true,
-    'show_admin_column' => true,
-  );
-  register_taxonomy('possibilities', '', $args);
-  register_taxonomy_for_object_type('possibilities', 'possibilities');
 }
+
+$categories = get_terms(array('taxonomy' => 'possibilities_type'));
+//add_filter('post_type_link', 'products_permalink', 1, 2);
+//
+//function products_permalink($permalink, $post)
+//{
+//  // выходим если это не наш тип записи: без холдера %products%
+//  if (strpos($permalink, '%possibilities_type%') === FALSE)
+//    return $permalink;
+//
+//  // Получаем элементы таксы
+//  $terms = get_the_terms($post, 'possibilities_type');
+//  // если есть элемент заменим холдер
+//  if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0]))
+//    $taxonomy_slug = $terms[0]->slug;
+//
+//  return str_replace('%possibilities_type%', $taxonomy_slug, $permalink);
+//}
+
 
 //Обрезаем длину краткого описания новостей
 add_filter('excerpt_length', function () {

@@ -8,7 +8,7 @@
   --black-color-hover: #535353;
   --black-color-active: #d7d7d7;
   --grey-color: #898989;
-  --light-grey-color: rgb(225 225 225);
+  --light-grey-color: rgb(225 225 225 / 30%);
   --white-color: #fff;
   --padding-64-32: clamp(32px, calc(1rem + 4vw), 64px);
   --padding-92-32: clamp(32px, calc(0.13rem + 7.5vw), 92px);
@@ -51,7 +51,7 @@ li {
 }
 
 ul:not([class]), ol:not([class]) {
-  padding-inline-start: 16px;
+  padding-inline-start: 20px;
 }
 
 ul li:not([class]) {
@@ -115,7 +115,9 @@ button {
 iframe,
 .wp-block-image,
 img:not([class]),
-figure:not([class]) {
+figure:not([class]),
+p img,
+img.alignnone {
   display: block;
   width: 100%;
   max-width: 794px;
@@ -150,13 +152,13 @@ body.locked {
 }
 
 [class*="__container"] {
-  max-width: 1240px;
-  padding-inline: clamp(10px, calc(-0.45rem + 2.27vw), 20px);
+  max-width: 1236px;
+  padding-inline: 18px;
   margin-inline: auto;
 }
 
 h2.wp-block-heading, h2:not([class]) {
-  font-size: 48px;
+  font-size: clamp(22px, 17px + 1.25vw, 32px);
   font-style: normal;
   font-weight: 500;
   line-height: 105%;
@@ -171,7 +173,7 @@ h2.wp-block-heading, h2:not([class]) {
 }
 
 h3.wp-block-heading, h3:not([class]) {
-  font-size: 24px;
+  font-size: clamp(20px, 18px + 0.5vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
@@ -186,7 +188,7 @@ h3.wp-block-heading, h3:not([class]) {
 }
 
 h4.wp-block-heading, h4:not([class]) {
-  font-size: 20px;
+  font-size: clamp(18px, 17px + 0.25vw, 20px);
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
@@ -235,7 +237,7 @@ h4.wp-block-heading, h4:not([class]) {
 }
 
 .section-title {
-  font-size: clamp(32px, calc(1.5rem + 2vw), 48px);
+  font-size: clamp(22px, 17px + 1.25vw, 32px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.05;
@@ -243,7 +245,7 @@ h4.wp-block-heading, h4:not([class]) {
 }
 
 .section-title-medium {
-  font-size: 24px;
+  font-size: clamp(20px, 18px + 0.5vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
@@ -345,6 +347,10 @@ div.searchwp-live-search-no-results em {
   border-radius: 6px;
 }
 
+.possibilities__container {
+  margin-bottom: var(--fluid-16-32);
+}
+
 /* header start */
 .site-header {
   position: relative;
@@ -355,11 +361,33 @@ div.searchwp-live-search-no-results em {
 .header__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   min-height: 106px;
   padding-block: 10px;
 
   @media screen and (width <= 860px) {
     position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background: url("../images/subscription/advantages-bg-mobile.svg") center top / cover no-repeat, var(--main-color);
+      opacity: 0;
+
+    }
+  }
+}
+
+@media screen and (width <= 860px) {
+  .site-header.isActive .header__container::after {
+    opacity: 1;
+    transition-delay: 0.3s;
   }
 }
 
@@ -368,7 +396,7 @@ div.searchwp-live-search-no-results em {
   z-index: 2;
   width: 114px;
   height: 60px;
-  margin-right: clamp(24px, calc(-6rem + 12vw), 48px);
+  margin-right: clamp(20px, 15px + 1.25vw, 30px);
 }
 
 .site-branding a {
@@ -402,7 +430,7 @@ div.searchwp-live-search-no-results em {
   display: flex;
   column-gap: 16px;
   align-items: center;
-  margin-right: clamp(15px, calc(-18.12rem + 30.5vw), 76px);
+  margin-right: clamp(10px, 5px + 1.25vw, 20px);
 }
 
 .header-media-icon {
@@ -420,10 +448,14 @@ div.searchwp-live-search-no-results em {
 }
 
 .header-navigation {
-  margin-right: auto;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  margin-right: clamp(10px, 5px + 1.25vw, 20px);
 }
 
-.site-header.isActive .logo-black-text {
+.site-header.isActive .custom-logo-link svg {
+  color: var(--white-color);
   fill: var(--white-color);
 }
 
@@ -436,6 +468,10 @@ div.searchwp-live-search-no-results em {
 
 .header-navigation .menu-item {
   transition-duration: 0.3s;
+
+  a {
+    display: block;
+  }
 
   @media screen and (width >= 861px) {
     &.current-menu-item {
@@ -468,7 +504,7 @@ div.searchwp-live-search-no-results em {
   height: 56px;
   padding-block: 16px;
   font-family: Inter, serif;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -514,6 +550,7 @@ div.searchwp-live-search-no-results em {
 
 
 .header-search-input::placeholder {
+  font-size: 18px;
   color: transparent;
 }
 
@@ -561,7 +598,7 @@ div.searchwp-live-search-no-results em {
 .main-hero {
   min-height: 640px;
   text-align: center;
-  background: url("../images/main-page/hero/main-bg.png") center / cover no-repeat, linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #FAFAFA 100%), #E1E1E17F;
+  background: url("../images/main-page/hero/main-bg.webp") center / cover no-repeat, linear-gradient(0deg, rgb(250 250 250 / 0%) 0%, #FAFAFA 100%), #E1E1E17F;
 }
 
 .main-hero__container {
@@ -605,12 +642,11 @@ div.searchwp-live-search-no-results em {
 
 .main-hero-img-decor-red {
   position: absolute;
-  right: 30px;
+  right: 10px;
   bottom: 20px;
   display: none;
   width: 142px;
   height: 104px;
-  filter: blur(5px);
 
   @media screen and (width <= 1290px) {
     display: inline-block;
@@ -648,6 +684,7 @@ div.searchwp-live-search-no-results em {
   height: 56px;
   padding: 6px 80px 6px 24px;
   font-family: Inter, serif;
+  font-size: 18px;
   background: #fff;
   border: 1px solid #e1e1e1;
   border-radius: 12px;
@@ -655,6 +692,7 @@ div.searchwp-live-search-no-results em {
   transition-duration: 0.3s;
 
   &::placeholder {
+    font-size: 18px;
     font-weight: 500;
     line-height: normal;
     color: #898989;
@@ -860,8 +898,23 @@ div.searchwp-live-search-no-results em {
   content: "";
   background-color: var(--white-color);
   transform: translateY(-50%);
+}
 
-  @media screen and (width <= 520px) {
+
+@media screen and (width <= 520px) {
+  .main-services {
+    padding-block: 10px;
+  }
+
+  .main-services-list {
+    padding-block: 0;
+  }
+
+  .main-services-item {
+    padding-block: 16px;
+  }
+
+  .main-services-item:not(:last-child)::after {
     top: initial;
     bottom: -8px;
     width: 100%;
@@ -913,7 +966,7 @@ div.searchwp-live-search-no-results em {
   border-right: 1px solid var(--grey-color);
 
   @media screen and (width <= 768px) {
-    padding: 18px 32px;
+    padding-block: 32px;
     border-right: initial;
   }
 }
@@ -922,7 +975,7 @@ div.searchwp-live-search-no-results em {
   padding: 32px 0 32px 32px;
 
   @media screen and (width <= 768px) {
-    padding: 18px 32px;
+    padding: 32px 0;
   }
 }
 
@@ -947,13 +1000,13 @@ div.searchwp-live-search-no-results em {
 /* main about us start */
 .main-about-us {
   background: linear-gradient(180deg, rgb(255 255 255 / 0%) 70%, #fff 100%),
-  url("../images/main-page/about/bg-image.png") top center / contain no-repeat,
+  url("../images/main-page/about/bg-image.webp") top center / contain no-repeat,
   #fafafa;
 
   @media screen and (width <= 640px) {
     padding-top: 142px;
     background: linear-gradient(180deg, rgb(255 255 255 / 0%) 70%, #fff 100%),
-    url("../images/main-page/about/bg-image.png") top -10px center / 100% no-repeat,
+    url("../images/main-page/about/bg-image.webp") top -10px center / 100% no-repeat,
     #fafafa;
   }
 }
@@ -1329,7 +1382,7 @@ div.searchwp-live-search-no-results em {
 .vmware.tariffs {
   padding-top: var(--fluid-64-92);
   padding-bottom: clamp(96px, 86px + 2.5vw, 116px);
-  background: url("../images/bg tariffs-v-server.png") top center / cover no-repeat;
+  background: url("../images/bg tariffs-v-server.webp") top center / cover no-repeat;
 
   .tariffs-subtitle {
     &:not(:last-child) {
@@ -1402,6 +1455,7 @@ div.searchwp-live-search-no-results em {
   height: 56px;
   padding: 6px 80px 6px 24px;
   font-family: Inter, serif;
+  font-size: 18px;
   background: #fff;
   border: 1px solid #e1e1e1;
   border-radius: 12px;
@@ -1409,6 +1463,7 @@ div.searchwp-live-search-no-results em {
   transition-duration: 0.3s;
 
   &::placeholder {
+    font-size: 18px;
     font-weight: 500;
     line-height: normal;
     color: #898989;
@@ -1575,6 +1630,7 @@ div.searchwp-live-search-no-results em {
 .tabs-content-item {
   flex-direction: column;
   row-gap: 16px;
+  word-break: break-word;
 }
 
 .tabs-content-item p {
@@ -1603,11 +1659,12 @@ div.searchwp-live-search-no-results em {
 }
 
 .accordion-title {
-  font-size: 24px;
+  font-size: clamp(20px, 18px + 0.5vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.3;
   text-align: start;
+  word-break: break-word;
 }
 
 .outer-border {
@@ -1619,6 +1676,7 @@ div.searchwp-live-search-no-results em {
 
   .accordion-title {
     font-size: initial;
+    word-break: break-word;
   }
 }
 
@@ -1805,10 +1863,12 @@ div.searchwp-live-search-no-results em {
 }
 
 .accordion-white-title {
-  font-size: 24px;
+  font-size: clamp(20px, 18px + 0.5vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.3;
+  text-align: start;
+  word-break: break-word;
 }
 
 .accordion-white-icon {
@@ -2118,6 +2178,7 @@ div.searchwp-live-search-no-results em {
 
 .tabs-table-content-item {
   position: relative;
+  word-break: break-word;
   border-bottom: 1px solid var(--light-grey-color);
 
   &::after {
@@ -2407,10 +2468,12 @@ div.searchwp-live-search-no-results em {
 }
 
 .accordion-table-title {
-  font-size: 24px;
+  font-size: clamp(20px, 18px + 0.5vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.3;
+  text-align: start;
+  word-break: break-word;
 }
 
 .accordion-table-icon {
@@ -2461,6 +2524,86 @@ div.searchwp-live-search-no-results em {
   .accordion-table-icon::after {
     opacity: 0;
   }
+}
+
+.products-list {
+  width: 100%;
+  max-width: 996px;
+}
+
+.products-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding-block: 10px;
+
+
+  @media screen and (width <= 570px) {
+    grid-template-columns: 1fr;
+  }
+
+  &:nth-child(even) {
+    background: #fbfbfb;
+    border-top: 0.5px solid var(--light-grey-color);
+    border-bottom: 1px solid var(--light-grey-color);
+  }
+}
+
+.products-item-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    flex: 1 1 auto;
+    padding: 8px;
+    text-align: center;
+  }
+
+
+  &:first-child {
+    justify-content: start;
+  }
+}
+
+.products-item-col:has( > img) {
+  padding: 8px;
+}
+
+.products-item-name {
+  position: relative;
+  cursor: pointer;
+
+  p {
+    text-align: start;
+  }
+
+  &::after {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    z-index: 1;
+    display: inline-block;
+    width: 150%;
+    height: auto;
+    padding: 32px 16px 16px;
+    clip-path: polygon(50% 0, 54% 5%, 100% 10%, 100% 100%, 0 100%, 0 10%, 46% 5%);
+    text-align: justify;
+    visibility: hidden;
+    content: attr(data-title);
+    background-color: var(--main-color-active);
+    border-radius: 20px;
+    opacity: 0;
+    transition-duration: 0.5s;
+    transform: translateX(-50%);
+  }
+}
+
+.products-item-name:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 .accordion-white-content-table {
@@ -2542,7 +2685,6 @@ div.searchwp-live-search-no-results em {
   @media screen and (width <= 600px) {
     grid-template-columns: repeat(1, 1fr);
     place-items: start;
-    max-width: 284px;
   }
 }
 
@@ -2653,6 +2795,16 @@ div.searchwp-live-search-no-results em {
   video {
     display: block;
     width: 100%;
+  }
+}
+
+.wordpress-admin-walking-video.section-with-video-content-wrapper {
+  height: 100%;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -2999,11 +3151,7 @@ div.searchwp-live-search-no-results em {
     width: 100%;
     height: 100%;
     content: "";
-    background: linear-gradient(
-        90deg,
-        rgb(76 169 65 / 4%) 31.11%,
-        #4ca941eb 52.18%
-    );
+    background: linear-gradient(90deg, rgb(76 169 65 / 0%) 13.11%, #4ca941 59.18%);
     border-radius: 12px;
   }
 }
@@ -3273,7 +3421,7 @@ div.searchwp-live-search-no-results em {
 .footer-address,
 .footer-support {
   &:not(:last-child) {
-    margin-bottom: clamp(32px, calc(1.27rem + 3.64vw), 64px);
+    margin-bottom: var(--fluid-16-32);
   }
 }
 
@@ -3284,13 +3432,15 @@ div.searchwp-live-search-no-results em {
 .footer-main-menu .menu {
   display: flex;
   flex-direction: column;
-  row-gap: clamp(16px, calc(0.82rem + 0.91vw), 24px);
+
+  /* row-gap: clamp(16px, calc(0.82rem + 0.91vw), 24px); */
+  row-gap: 12px;
 }
 
 .footer-main-menu,
 .footer-media {
   &:not(:last-child) {
-    margin-bottom: clamp(32px, calc(1.27rem + 3.64vw), 64px);
+    margin-bottom: var(--fluid-16-32);
   }
 }
 
@@ -3811,6 +3961,9 @@ div.searchwp-live-search-no-results em {
 }
 
 .technik-brands-item-logo {
+  max-width: 100%;
+  height: auto;
+
   &:not(:last-child) {
     margin-bottom: 32px;
   }
@@ -3873,9 +4026,10 @@ div.searchwp-live-search-no-results em {
     inset: 0;
     z-index: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: start;
-    padding: 18px;
+    padding: 150px 18px 18px;
+    overflow-y: auto;
     background: url("../images/subscription/advantages-bg-mobile.svg") center / cover no-repeat, var(--main-color);
     transition-duration: 0.3s;
     transform: translateX(-200%);
@@ -3886,10 +4040,14 @@ div.searchwp-live-search-no-results em {
   }
 
   .header-navigation .menu {
+    /* position: absolute; */
+
+    /* top: 140px; */
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 20px;
     align-items: start;
-    font-size: 32px;
+    overflow: auto;
+    font-size: 26px;
     font-weight: 500;
     line-height: 1.2;
     color: var(--white-color);
@@ -3904,13 +4062,15 @@ div.searchwp-live-search-no-results em {
   }
 
   .burger {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     row-gap: 8px;
     align-items: center;
     justify-content: center;
     order: -1;
-    width: 24px;
+    width: 30px;
     height: 24px;
   }
 
@@ -3960,6 +4120,7 @@ div.searchwp-live-search-no-results em {
 
   .splide__pagination {
     bottom: -1.5em;
+    z-index: 0;
     display: flex;
     column-gap: 12px;
   }

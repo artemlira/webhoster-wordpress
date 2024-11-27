@@ -1,0 +1,19 @@
+{
+  "name": "acf-products",
+  "title": "Products Block",
+  "description": "a custom products block uses ACF fields",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    "product",
+    "products",
+    "possibilities"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "products.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
