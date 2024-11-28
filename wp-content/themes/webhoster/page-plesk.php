@@ -1,24 +1,15 @@
-<?php get_header();
-
-//if (!dynamic_sidebar('sidebar-1')) : dynamic_sidebar('sidebar-1');endif;
+<?php
+/*
+Template Name: Plesk page
+Template Post Type: post, page, product
+*/
 ?>
 
-<section class="section-blog">
-  <header class="section-blog-header">
-    <div class="section-blog-header__container">
-      <h1 class="section-blog-title">
-        <?php if (is_category()) {
-          echo get_queried_object()->name;
-        }
+<?php get_header(); ?>
 
-        ?>
-      </h1>
-      <ul>
-        <?php wp_list_categories(); ?>
-      </ul>
-    </div>
-  </header>
+<?php the_content(); ?>
   <div class="section-blog__container">
+    <h2>Plesk Anleitungen und Funktionen</h2>
     <ul class="section-blog-list">
       <?php
       global $post;
@@ -29,7 +20,7 @@
           array(
             'taxonomy' => 'category',
             'field' => 'slug',
-            'terms' => get_queried_object()->slug
+            'terms' => 'plesk-administration'
           )
         )
       ]);
@@ -67,7 +58,7 @@
       ?>
     </ul>
   </div>
-  <?php if (!dynamic_sidebar('error-404')) : dynamic_sidebar('error-404');endif; ?>
-</section>
+<?php if (!dynamic_sidebar('error-404')) : dynamic_sidebar('error-404');endif; ?>
+
 
 <?php get_footer(); ?>

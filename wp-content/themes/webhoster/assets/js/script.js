@@ -360,6 +360,21 @@ function toggleAccordion(
 ) {
   const accordions = document.querySelectorAll(`${classNameAccorion}`);
 
+  if (accordions.length > 0) {
+    const firstAccordion = accordions[0];
+    const firstContent = firstAccordion.querySelector(
+      `${classNameAccordionContent}`,
+    );
+    const firstControl = firstAccordion.querySelector(
+      `${classNameAccordionControl}`,
+    );
+
+    firstAccordion.classList.add("isActive");
+    firstContent.style.maxHeight = `${firstContent.scrollHeight}px`;
+    firstContent.setAttribute("aria-hidden", false);
+    firstControl.setAttribute("aria-expanded", true);
+  }
+
   accordions?.forEach((item) => {
     item?.addEventListener("click", (e) => {
       document?.querySelectorAll(`${classNameAccorion}`).forEach((el) => {
@@ -614,3 +629,21 @@ document.addEventListener("DOMContentLoaded", () => {
     event.stopPropagation();
   });
 });
+
+// ================ scroll =================
+function checkHorizontalOverflows() {
+  const blocks = document.querySelectorAll(".tabs-header");
+
+  blocks?.forEach((block) => {
+    const scrollNotification = document.querySelector(".tabs-scroll");
+
+    if (block.scrollWidth + 50 > window.innerWidth) {
+      scrollNotification.style.display = "flex";
+    } else {
+      scrollNotification.style.display = "none";
+    }
+  });
+}
+
+window.addEventListener("load", checkHorizontalOverflows);
+window.addEventListener("resize", checkHorizontalOverflows);

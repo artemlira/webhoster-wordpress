@@ -19,7 +19,7 @@ $footerLogo = get_field('logotype_footer', 'option');
         <div class="footer-logo-wrapper">
           <?php if ($footerLogo) : ?>
             <a class="logo-footer" href="<?php echo get_home_url(); ?>">
-              <img src="<?= $footerLogo['url'] ?>" alt="<?= $footerLogo['alt'] ?>">
+              <img loading="lazy" src="<?= $footerLogo['url'] ?>" alt="<?= $footerLogo['alt'] ?>">
             </a>
           <?php else : ?>
             <?php the_custom_logo(); ?>

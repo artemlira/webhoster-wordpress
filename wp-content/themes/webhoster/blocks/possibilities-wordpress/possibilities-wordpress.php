@@ -47,7 +47,7 @@ if (!empty($block['className'])) {
 
         )
       ),
-      'order' => 'DESC', //DESC
+      'order' => 'ASC', //DESC
       // 'order'     => 'DESC', //DESC
     );
     $query = new WP_Query($args);

@@ -1,6 +1,7 @@
 <?php get_header();
 
 //if (!dynamic_sidebar('sidebar-1')) : dynamic_sidebar('sidebar-1');endif;
+
 ?>
 
 <section class="section-blog">
@@ -14,10 +15,11 @@
   </header>
   <div class="section-blog__container">
     <ul class="section-blog-list">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <?php if (have_posts()) : while (have_posts()) : the_post();
+        $categories = get_the_category(); ?>
         <li class="section-blog-item">
           <?php if (has_category()): ?>
-            <span class="section-blog-item-category"><?php the_category($post->ID); ?></span>
+            <span class="section-blog-item-category"><?php echo $categories[0]->name; ?></span>
           <?php endif; ?>
           <?php if (has_post_thumbnail()) : ?>
             <a class="section-blog-item-image-wrapper" href="<?php the_permalink(); ?>"
