@@ -1681,12 +1681,15 @@ div.searchwp-live-search-no-results em {
 }
 
 .accordion-section-title {
+  color: var(--white-color);
+
   &:not(:last-child) {
     margin-bottom: 32px;
   }
 }
 
 .accordion-section-text {
+  color: var(--white-color);
   width: 50%;
   margin-left: auto;
 
@@ -3616,14 +3619,26 @@ div.searchwp-live-search-no-results em {
   border-top: 1px solid var(--grey-color);
 }
 
+.single-post .nav-links div {
+
+}
+
 .single-post .nav-links a {
-  font-size: clamp(14px, 12px + 0.4878vw, 18px);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+  border-radius: 6px;
   transition-duration: 0.3s;
-  font-weight: 500;
 
   &:hover {
-    color: var(--main-color-hover);
+    background-color: var(--main-color-hover);
   }
+}
+
+.current-item {
+  color: var(--main-color);
 }
 
 /* single post end */
