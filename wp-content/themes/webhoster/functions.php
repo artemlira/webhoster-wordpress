@@ -182,7 +182,7 @@ function webhoster_scripts()
 {
   wp_enqueue_style('webhoster-style', get_stylesheet_uri(), array(), _S_VERSION);
   wp_enqueue_style('splide', get_template_directory_uri() . '/assets/css/splide.min.css', array(), '4.1.3');
-  wp_enqueue_style('stylesheet', get_template_directory_uri() . '/assets/fonts/stylesheet.css', array(), '1.0.0');
+  wp_enqueue_style('stylesheet', get_template_directory_uri() . '/assets/fonts/stylesheet.min.css', array(), '1.0.0');
   wp_enqueue_style('styles', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
 
   wp_enqueue_script('webhoster-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
@@ -325,22 +325,6 @@ function my_custom_init_possibilities()
 }
 
 $categories = get_terms(array('taxonomy' => 'possibilities_type'));
-//add_filter('post_type_link', 'products_permalink', 1, 2);
-//
-//function products_permalink($permalink, $post)
-//{
-//  // выходим если это не наш тип записи: без холдера %products%
-//  if (strpos($permalink, '%possibilities_type%') === FALSE)
-//    return $permalink;
-//
-//  // Получаем элементы таксы
-//  $terms = get_the_terms($post, 'possibilities_type');
-//  // если есть элемент заменим холдер
-//  if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0]))
-//    $taxonomy_slug = $terms[0]->slug;
-//
-//  return str_replace('%possibilities_type%', $taxonomy_slug, $permalink);
-//}
 
 
 //Обрезаем длину краткого описания новостей
@@ -377,5 +361,3 @@ function custom_search_redirect()
 }
 
 add_action('template_redirect', 'custom_search_redirect');
-
-

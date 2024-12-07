@@ -20,6 +20,11 @@ get_header();
 
 
   <div class="entry-content single-post__container">
+    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+      <?php if (function_exists('bcn_display')) {
+        bcn_display();
+      } ?>
+    </div>
     <header class="post-header">
       <h1 class="post-title section-title"><?php the_title_attribute(); ?></h1>
       <p class="post-subtitle"><?= $cat[0]->name; ?></p>
@@ -42,6 +47,13 @@ get_header();
     );
     //    if (!dynamic_sidebar('single-post')) : dynamic_sidebar('single-post');
     //    endif;
+
+    the_post_navigation(
+      array(
+        'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'fin-law') . '</span> <span class="nav-title">%title</span>',
+        'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'fin-law') . '</span> <span class="nav-title">%title</span>',
+      )
+    );
     wp_link_pages(
       array(
         'before' => '<div class="page-links">' . esc_html__('Pages:', 'webhoster'),
